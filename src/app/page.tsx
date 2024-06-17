@@ -46,9 +46,6 @@ export default function Home() {
 			})
 		);
 
-		// ----- LOG to test. Remove it ! -----
-		console.log("moviesWithPoster", moviesWithPoster);
-
 		setMovies(moviesWithPoster);
 	};
 
@@ -151,6 +148,7 @@ export default function Home() {
 								onClick={() => setCurrentPage((prev) => prev - 1)}
 								disabled={currentPage === 0}
 								className={styles.button}
+								style={{ opacity: currentPage === 0 ? 0.5 : 1 }}
 							>
 								Previous
 							</button>
@@ -166,6 +164,17 @@ export default function Home() {
 									).length
 								}
 								className={styles.button}
+								style={{
+									opacity:
+										(currentPage + 1) * nbMoviesDisplayed >=
+										movies.filter(
+											(movie) =>
+												categoriesSelected.length === 0 ||
+												categoriesSelected.includes(movie.category)
+										).length
+											? 0.5
+											: 1,
+								}}
 							>
 								Next
 							</button>
