@@ -6,7 +6,7 @@
 	min-height: 100vh;
 	padding-bottom: 1rem;
 
-	color: #fff;
+	color: #fafafa;
 	background: #212121;
 
 	.title {
@@ -40,6 +40,7 @@
 			color: #fff;
 			background: #383838;
 
+			border: 1px solid #212121;
 			border-radius: 0.5rem;
 
 			overflow: hidden;
@@ -72,14 +73,40 @@
 				background-position: center;
 				background-size: cover;
 			}
+
+			transition: transform 0.3s ease;
+		}
+
+		.card:hover {
+			transform: scale(1.05);
+			transition: transform 0.3s ease;
+			border: 1px solid #5638f0;
 		}
 	}
 
 	.pagination {
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		gap: 1rem;
 		margin: 0.5rem;
 		margin-top: auto;
+
+		.paginationTop {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 1rem;
+		}
+
+		.button {
+			background-color: #5638f0;
+			color: #fafafa;
+			font-weight: bold;
+			width: 5rem;
+			padding: 0.5rem;
+			border: none;
+			border-radius: 1rem;
+		}
 	}
 }

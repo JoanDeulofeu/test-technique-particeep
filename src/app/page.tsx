@@ -146,32 +146,36 @@ export default function Home() {
 						categoriesSelected.includes(movie.category)
 				).length > nbMoviesDisplayed && (
 					<div className={styles.pagination}>
-						<button
-							onClick={() => setCurrentPage((prev) => prev - 1)}
-							disabled={currentPage === 0}
-						>
-							Previous
-						</button>
-						<span>Page {currentPage + 1}</span>
-						<button
-							onClick={() => setCurrentPage((prev) => prev + 1)}
-							disabled={
-								(currentPage + 1) * nbMoviesDisplayed >=
-								movies.filter(
-									(movie) =>
-										categoriesSelected.length === 0 ||
-										categoriesSelected.includes(movie.category)
-								).length
-							}
-						>
-							Next
-						</button>
+						<div className={styles.paginationTop}>
+							<button
+								onClick={() => setCurrentPage((prev) => prev - 1)}
+								disabled={currentPage === 0}
+								className={styles.button}
+							>
+								Previous
+							</button>
+							<span>Page {currentPage + 1}</span>
+							<button
+								onClick={() => setCurrentPage((prev) => prev + 1)}
+								disabled={
+									(currentPage + 1) * nbMoviesDisplayed >=
+									movies.filter(
+										(movie) =>
+											categoriesSelected.length === 0 ||
+											categoriesSelected.includes(movie.category)
+									).length
+								}
+								className={styles.button}
+							>
+								Next
+							</button>
+						</div>
+						<ItemsPerPage
+							nbMoviesDisplayed={nbMoviesDisplayed}
+							setNbMoviesDisplayed={setNbMoviesDisplayed}
+						/>
 					</div>
 				)}
-				<ItemsPerPage
-					nbMoviesDisplayed={nbMoviesDisplayed}
-					setNbMoviesDisplayed={setNbMoviesDisplayed}
-				/>
 			</main>
 		</ThemeProvider>
 	);
