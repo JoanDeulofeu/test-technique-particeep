@@ -46,6 +46,9 @@ export default function Home() {
 			})
 		);
 
+		// ----- LOG to test. Remove it ! -----
+		console.log("moviesWithPoster", moviesWithPoster);
+
 		setMovies(moviesWithPoster);
 	};
 
