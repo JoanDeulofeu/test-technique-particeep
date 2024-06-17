@@ -37,7 +37,7 @@ export default function Home() {
 		const moviesWithPoster = await Promise.all(
 			response.map(async (movie) => {
 				const poster = await fetch(
-					`http://www.omdbapi.com/?t=${movie.title.replace(" ", "+")}&y=${
+					`https://www.omdbapi.com/?t=${movie.title.replace(" ", "+")}&y=${
 						movie.year
 					}&plot=full&apikey=${OMDB_API_KEY}`
 				);
