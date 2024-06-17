@@ -1,0 +1,42 @@
+.container {
+	margin-top: auto;
+
+	.iconsContainer {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 0.4rem;
+
+		.icon {
+			display: flex;
+			gap: 0.5rem;
+			justify-content: center;
+			align-items: center;
+
+			cursor: pointer;
+		}
+	}
+
+	.gauge {
+		display: flex;
+		height: 12px;
+
+		border-radius: 5px;
+		overflow: hidden;
+
+		.like {
+			display: flex;
+			justify-content: start;
+			align-items: center;
+			height: 100%;
+			background-color: lime;
+		}
+
+		.dislike {
+			display: flex;
+			justify-content: end;
+			align-items: center;
+			height: 100%;
+			background-color: red;
+		}
+	}
+}
